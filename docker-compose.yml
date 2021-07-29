@@ -2,6 +2,8 @@ version: '3'
 
 services:
   jenkins:
+    privileged: true
+    user: root
     image: jenkins/jenkins:lts-jdk11
     volumes:
       - ./jenkins_home:/var/jenkins_home
