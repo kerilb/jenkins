@@ -5,6 +5,9 @@ services:
     privileged: true
     user: root
     image: jenkins/jenkins:lts-jdk11
+    environment:
+      JAVA_OPTS: -Djenkins.install.runSetupWizard=false
+      JENKINS_OPTS: --argumentsRealm.roles.user=admin --argumentsRealm.passwd.admin=admin --argumentsRealm.roles.admin=admin
     volumes:
       - ./jenkins_home:/var/jenkins_home
     ports:
